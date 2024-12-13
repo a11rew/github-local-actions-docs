@@ -21,10 +21,11 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Start Here',
+					label: 'Overview',
 					items: [
-						{ label: 'Overview', link: '/' },
-						{ label: 'Installation', link: 'start/installation' }
+						{ label: 'GitHub Local Actions', link: '/' },
+						{ label: 'Installation', link: 'overview/installation' },
+						{ label: 'Help and Support', link: 'overview/helpandsupport' }
 					]
 				},
 				{
@@ -39,20 +40,11 @@ export default defineConfig({
 				{
 					label: 'Miscellaneous',
 					items: [
-						{ label: 'Artifacts and Cache', link: 'miscellaneous/artifactsandcache' },
-						{ label: 'Skipping Jobs and Steps', link: 'miscellaneous/skippingjobsandsteps' },
 						{ label: 'Custom Container Engine', link: 'miscellaneous/customcontainerengine' },
+						{ label: 'Skipping Jobs and Steps', link: 'miscellaneous/skippingjobsandsteps' },
+						{ label: 'Artifacts and Cache', link: 'miscellaneous/artifactsandcache' },
 						{ label: 'GitHub Enterprise', link: 'miscellaneous/githubenterprise' },
-						{ label: 'GitHub Token', link: 'miscellaneous/githubtoken' },
-						{ label: 'Action Offline Mode', link: 'miscellaneous/actionofflinemode' }
-					]
-				},
-				{
-					label: 'Help and Support',
-					items: [
-						{ label: 'Troubleshooting', link: 'help/troubleshooting' },
-						{ label: 'Report an Issue', link: 'help/reportanissue' },
-						{ label: 'Known Bugs', link: 'help/knownbugs' }
+						{ label: 'GitHub Token', link: 'miscellaneous/githubtoken' }
 					]
 				}
 			],
