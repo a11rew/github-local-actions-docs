@@ -21,7 +21,7 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Overview',
+					label: '🤖 Overview',
 					items: [
 						{ label: 'GitHub Local Actions', link: '/' },
 						{ label: 'Installation', link: 'overview/installation' },
@@ -29,7 +29,7 @@ export default defineConfig({
 					]
 				},
 				{
-					label: 'Usage',
+					label: '🧑‍💻 Usage',
 					items: [
 						{ label: 'Components', link: 'usage/components' },
 						{ label: 'Workflows', link: 'usage/workflows' },
@@ -38,7 +38,7 @@ export default defineConfig({
 					]
 				},
 				{
-					label: 'Miscellaneous',
+					label: '💡 Miscellaneous',
 					items: [
 						{ label: 'Custom Container Engine', link: 'miscellaneous/customcontainerengine' },
 						{ label: 'Skipping Jobs and Steps', link: 'miscellaneous/skippingjobsandsteps' },

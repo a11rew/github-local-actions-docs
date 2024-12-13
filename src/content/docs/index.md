@@ -25,3 +25,10 @@ Run your GitHub Actions locally with the power of the [GitHub Local Actions](htt
 * ⚙️ **Manage Workflow Settings**: Define secrets, variables, inputs, and runners to be used when executing workflows.
 
 ![GitHub Local Actions](https://raw.githubusercontent.com/SanjulaGanepola/github-local-actions/main/images/github-local-actions.gif)
+
+## Why Run Actions Locally?
+
+Ever wondered why you might want to run GitHub Actions locally? As summarized perfectly in the [nektos/act documentation](https://nektosact.com/#introduction), there are two major advantages:
+
+* ⚡ **Fast Feedback**: Developers, especially newer ones, often end up pushing unnecessary commits to their GitHub repository just to test changes in their `.github/workflows` files. These commit-push cycles can be easily avoided by running these workflows locally instead, allowing them to get feedback much faster.
+* 🛠️ **Local Task Runner**: Running workflows locally can be used to minimize repetitive tasks in your development flow. By being able to run the same actions you do on GitHub but locally, you can ensure consistency across both environments while streamlining your development process.
