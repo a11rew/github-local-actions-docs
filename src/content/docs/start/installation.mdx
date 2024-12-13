@@ -1,0 +1,34 @@
+---
+title: Installation
+description: Outline installation steps.
+---
+
+import { CardGrid, Card, Badge, LinkCard, Icon } from '@astrojs/starlight/components';
+
+GitHub Local Actions can be installed directly from the `Extensions` view in Visual Studio Code or using either the VS Code Marketplace or Open VSX Registry.
+
+<CardGrid>
+   <LinkCard title="VS Code Marketplace" href="https://marketplace.visualstudio.com/items?itemName=SanjulaGanepola.github-local-actions"/>
+   <LinkCard title="Open VSX Registry" href="https://open-vsx.org/extension/SanjulaGanepola/github-local-actions"/>
+</CardGrid>
+
+## Component Installation
+
+<Card title="nektos/act" icon="rocket">
+[nektos/act](https://github.com/nektos/act) will be used for running your workflows as VS Code tasks. This component can be installed from the <a href="/docs/usage/components">Components</a> view or manually using the instructions [here](https://nektosact.com/installation/index.html).
+</Card>
+<Card title="Docker Engine" icon="external">
+[Docker Engine API](https://docs.docker.com/reference/api/engine) is required for nektos/act if you plan to run workflows in containers. This component should be manually installed using the instructions [here](https://docs.docker.com/engine/install).
+
+:::caution
+If you do not container isolation, you can run selected (e.g. Windows or MacOS) workflow jobs directly on your system. In this case, you do not need to have docker installed or running.
+:::
+</Card>
+
+
+## Recommended Extensions
+
+It is recommended to install the following extensions as they provide additional functionality that complement GitHub Local Actions.
+
+<LinkCard title="GitHub Actions" href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions"
+description="Edit workflow files easily with the help of syntax highlighting, integrated documentation, code completion and workflow validation."/>
