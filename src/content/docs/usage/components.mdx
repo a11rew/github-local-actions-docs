@@ -5,3 +5,17 @@ banner:
   content: |
     This page is work in progress!
 ---
+
+The `Components` view is where you can manage the following components which must be installed and started up before running any GitHub Actions:
+
+1. [nektos/act](https://github.com/nektos/act): Act is a CLI tool responsible for executing your workflows locally. It can be installed via several software package managers or using a pre-built artifact.
+
+    ![nektos/act Installation](https://raw.githubusercontent.com/SanjulaGanepola/github-local-actions/main/images/components-view.png)
+
+2. [Docker Engine](https://docs.docker.com/engine): Docker Engine is required for act to function as it uses Docker to handle workflow execution. The process includes:
+    
+    * Pulling or building the images specified in your workflow files
+    * Determining the execution path based on your workflow's dependencies
+    * Running containers for each action using the prepared images
+    
+    The containers are configured to mirror GitHub's environment, including matching [environment variables](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#default-environment-variables) and [filesystems](https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners#file-systems), ensuring a consistent and reliable local execution.
