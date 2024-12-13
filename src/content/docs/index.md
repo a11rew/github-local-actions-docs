@@ -26,7 +26,7 @@ Run your GitHub Actions locally with the power of the [GitHub Local Actions](htt
 
 ![GitHub Local Actions](https://raw.githubusercontent.com/SanjulaGanepola/github-local-actions/main/images/github-local-actions.gif)
 
-## Why Run Actions Locally?
+## Why Run GitHub Actions Locally?
 
 Ever wondered why you might want to run GitHub Actions locally? As summarized perfectly in the [nektos/act documentation](https://nektosact.com/#introduction), there are two major advantages:
 
