@@ -62,33 +62,9 @@ The `act` command which will be used will be the exact same as the first two cas
 act --workflows ".github/workflows/<workflow_file_name>.yaml" --secret-file "" --var-file "" --input-file "" --eventpath ""
 ```
 
-![Run Event](../../../assets/run-event.png)
-
-### Event Payloads
-
-When running jobs, in some cases your workflows may rely on event properties. In this case, you will have to provide these properties as an event payload.
-
-For example, to partially simulate a `pull_request` event, you should provide at least the `head_ref` and `base_ref`. These values can then be accessed in your workflow file using `${{ github.event.pull_request.<...> }}`. These properties can be set using an event payload file (`payload.json`) with content such as the following:
-
-```json
-{
-  "pull_request": {
-    "head": {
-      "ref": "sample-head-ref"
-    },
-    "base": {
-      "ref": "sample-base-ref"
-    }
-  }
-}
-```
-
-Once you have created this file, you can use the `Event Payload` heading under the <a href="/docs/usage/settings">Settings</a> view to include it during workflow execution. This will cause the `act` command to use the `--eventpath` option which specifies the path to the event payload file.
-
-```sh
-act --workflows ".github/workflows/application.yaml" --secret-file "" --var-file "" --input-file "" --eventpath "<event_payload_file_path>"
-```
-
 :::tip
-For a full description of all GitHub events and the associated payload properties, refer to the official [GitHub documentation](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows).
+When running certain events, you may require event properties to be defined because their values are used in your workflow. Click <a href="/docs/usage/settings#payloads">here</a> to learn how to define these properties as an event payload.
+
 :::
+
+![Run Event](../../../assets/run-event.png)
