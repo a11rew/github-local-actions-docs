@@ -1,16 +1,94 @@
 ---
 title: Workflows
 description: Deep dive into the Workflows view.
-banner:
-  content: |
-    This page is work in progress!
 ---
 
-The `Workflows` view is where you can manage and run workflows locally. You have several options to execute a workflow:
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-1. **Run All Workflows**: Run all workflows in the workspace.
-2. **Run Workflow**: Run an entire workflow.
-3. **Run Job**: Run a specific job in a workflow.
-4. **Run Event**: Run multiple workflows by triggering a [GitHub event](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows).
+The `Workflows` view is where you can manage and run workflows as VS Code tasks. There are several options to executing a workflow.
 
-![Workflows View](https://raw.githubusercontent.com/SanjulaGanepola/github-local-actions/main/images/workflows-view.png)
+<CardGrid>
+   <LinkCard title="🗃️ Run All Workflows" href="#run-all-workflows" description="Run all workflows in the workspace."/>
+   <LinkCard title="📜 Run Single Workflow" href="#run-single-workflow" description="Run a single workflow in the workspace."/>
+   <LinkCard title="🚀 Run Job" href="#run-job" description="Run a specific job in a workflow."/>
+   <LinkCard title="⚡ Run Event" href="#run-event" description="Run multiple workflows using a GitHub event."/>
+</CardGrid>
+
+---
+
+## Run All Workflows
+
+To simply run all workflows in the workspace, use the `Run All Workflows` inline action on the `Workflows` view. This will start up individual VS Code tasks for each workflow defined in your `.github/workflows` folder and create separate entries in the <a href="/docs/usage/history">History</a> view.
+
+Each task will execute an `act` command that looks similar to the command below (assuming no <a href="/docs/usage/settings">settings</a> are being used). In particular, note the `--workflows` options which is used to specify the path to the workflow file being executed.
+
+```sh
+act --workflows ".github/workflows/<workflow_file_name>.yaml" --secret-file "" --var-file "" --input-file "" --eventpath ""
+```
+
+![Run All Workflows](../../../assets/run-all-workflows.png)
+
+## Run Single Workflow
+
+If you would like to run just a single workflow, locate the workflow in the `Workflows` view and use the `Run Workflow` inline action. This action behaves similar to the previous one, except it will only start a VS Code task and create a history entry for the selected workflow.
+
+The `act` command which will be used is the exact same as the previous one (again assuming no <a href="/docs/usage/settings">settings</a> are being used).
+
+```sh
+act --workflows ".github/workflows/<workflow_file_name>.yaml" --secret-file "" --var-file "" --input-file "" --eventpath ""
+```
+
+![Run Single Workflow](../../../assets/run-single-workflow.png)
+
+## Run Job
+
+To run a specific job in a workflow, expand the workflow with the desired job in the `Workflows` view and use the `Run Job` inline action. This action will also only create a single VS Code task and one history entry for the executing job.
+
+The `act` command which will be used is similar to the previous two cases (again assuming no <a href="/docs/usage/settings">settings</a> are being used), except it will also use the `--job` option which specifies the job ID for the job to execute.
+
+```sh
+act --workflows ".github/workflows/<workflow_file_name>.yaml" --job "<job_id>" --secret-file "" --var-file "" --input-file "" --eventpath ""
+```
+
+![Run Job](../../../assets/run-job.png)
+
+## Run Event
+
+GitHub events are used to configure workflows to run when specific activities happen on GitHub. These same events can be simulated to run multiple workflows locally. To run an event, use the `Run Event` inline action on the `Workflows` view which will prompt you for the event to trigger. Individual VS Code tasks will be started and history entries will be created for each workflow in the workspace that is set to be triggered by that event.
+
+The `act` command which will be used will be the exact same as the first two cases (again assuming no <a href="/docs/usage/settings">settings</a> are being used).
+
+```sh
+act --workflows ".github/workflows/<workflow_file_name>.yaml" --secret-file "" --var-file "" --input-file "" --eventpath ""
+```
+
+![Run Event](../../../assets/run-event.png)
+
+### Event Payloads
+
+When running jobs, in some cases your workflows may rely on event properties. In this case, you will have to provide these properties as an event payload.
+
+For example, to partially simulate a `pull_request` event, you should provide at least the `head_ref` and `base_ref`. These values can then be accessed in your workflow file using `${{ github.event.pull_request.<...> }}`. These properties can be set using an event payload file (`payload.json`) with content such as the following:
+
+```json
+{
+  "pull_request": {
+    "head": {
+      "ref": "sample-head-ref"
+    },
+    "base": {
+      "ref": "sample-base-ref"
+    }
+  }
+}
+```
+
+Once you have created this file, you can use the `Event Payload` heading under the <a href="/docs/usage/settings">Settings</a> view to include it during workflow execution. This will cause the `act` command to use the `--eventpath` option which specifies the path to the event payload file.
+
+```sh
+act --workflows ".github/workflows/application.yaml" --secret-file "" --var-file "" --input-file "" --eventpath "<event_payload_file_path>"
+```
+
+:::tip
+For a full description of all GitHub events and the associated payload properties, refer to the official [GitHub documentation](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows).
+:::

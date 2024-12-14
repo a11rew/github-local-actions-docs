@@ -19,6 +19,9 @@ export default defineConfig({
 			editLink: {
 				baseUrl: 'https://github.com/SanjulaGanepola/github-local-actions-docs/edit/main/'
 			},
+			customCss: [
+				'/src/styles/custom.css'
+			],
 			sidebar: [
 				{
 					label: '🤖 Overview',
