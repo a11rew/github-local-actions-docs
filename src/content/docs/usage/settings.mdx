@@ -126,7 +126,7 @@ For example, to partially simulate a `pull_request` event, you should provide at
 }
 ```
 
-Once you have created this file, you can use the `Event Payload` heading under the <a href="/docs/usage/settings">Settings</a> view to include it during workflow execution. This will cause the `act` command to use the `--eventpath` option which specifies the path to the event payload file.
+This file can be created using the `Create Payload File` action in the `Settings` view and must be checked for it to be included during execution. Checking it will cause the `act` command to use the `--eventpath` option which specifies the path to the event payload file.
 
 :::tip
 For a full description of all GitHub events and the associated payload properties, refer to the official [GitHub documentation](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows).
