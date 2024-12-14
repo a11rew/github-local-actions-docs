@@ -22,7 +22,7 @@ Run your GitHub Actions locally with the power of the [GitHub Local Actions](htt
 * 🚀 **Run Workflows/Jobs**: Run entire workflows or specific jobs locally without leaving your editor.
 * ⚡ **Trigger Events**: Trigger standard [GitHub events](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows) to run multiple workflows.
 * 📖 **View Workflow Run History**: Track and investigate past workflow logs.
-* ⚙️ **Manage Workflow Settings**: Define secrets, variables, inputs, and runners to be used when executing workflows.
+* ⚙️ **Manage Workflow Settings**: Define secrets, variables, inputs, runners, payloads, and options for execution.
 
 ![GitHub Local Actions](/github-local-actions-docs/github-local-actions.gif)
 
