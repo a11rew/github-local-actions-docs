@@ -1,6 +1,6 @@
 ---
 title: GitHub Local Actions
-description: Run your GitHub Actions locally!
+description: ✨ Run your GitHub Actions locally!
 banner:
   content: |
     ✨ If you find this extension useful, please consider starring the <a href="https://github.com/SanjulaGanepola/github-local-actions">GitHub repository</a> ✨
