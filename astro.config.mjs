@@ -5,7 +5,7 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://sanjulaganepola.github.io',
-	base: '/github-local-actions',
+	base: '/github-local-actions-docs',
 	integrations: [
 		starlight({
 			title: 'GitHub Local Actions Docs',

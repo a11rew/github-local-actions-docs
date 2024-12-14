@@ -15,7 +15,7 @@ banner:
   </a>
 </div>
 
-<img src="/github-local-actions/icon.png" align="right" width="128" height="128">
+<img src="/github-local-actions-docs/icon.png" align="right" width="128" height="128">
 
 Run your GitHub Actions locally with the power of the [GitHub Local Actions](https://marketplace.visualstudio.com/items?itemName=SanjulaGanepola.github-local-actions) Visual Studio Code extension! Say goodbye to the hassle of committing and pushing changes every time you need to test a workflow. This extension lets you quickly and efficiently run your workflows locally, leveraging the [nektos/act](https://github.com/nektos/act) CLI tool. Enjoy a seamless experience with an interface designed to feel as familiar as the official [GitHub Actions](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions) extension.
 
@@ -24,7 +24,7 @@ Run your GitHub Actions locally with the power of the [GitHub Local Actions](htt
 * 📖 **View Workflow Run History**: Track and investigate past workflow logs.
 * ⚙️ **Manage Workflow Settings**: Define secrets, variables, inputs, and runners to be used when executing workflows.
 
-![GitHub Local Actions](/github-local-actions/github-local-actions.gif)
+![GitHub Local Actions](/github-local-actions-docs/github-local-actions.gif)
 
 ## Why Run GitHub Actions Locally?
 
